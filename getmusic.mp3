@@ -1,0 +1,21 @@
+<?php
+
+
+ 
+ $date=date("Ymd-H:i:m");
+    
+
+header( "Content-type:  application/octet-stream "); 
+    
+
+header( "Accept-Ranges:  bytes "); 
+    
+header("accept-length:999999");
+
+header( "Content-Disposition:  attachment;  filename= https://obs-410c.obs.myhwclouds.com/music/getacgmusic.mp3"); 
+
+
+
+
+
+
