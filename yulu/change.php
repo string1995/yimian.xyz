@@ -4,9 +4,9 @@ $name=$_GET['name'];
 
 $end=date('y-m-d',time());
   
-            $mydbhost = "localhost";  
+           $mydbhost = "114.116.65.152";  
             $mydbuser = "yimian";  
-            $mydbpass = 'lymian0904';  
+            $mydbpass = 'Lymian0904@112';  
             $conn = mysqli_connect($mydbhost, $mydbuser, $mydbpass);  
             if(! $conn){  
                 die("connect error: " . mysqli_error($conn));  

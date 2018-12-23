@@ -45,17 +45,14 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <h1 class="page-header">沧桑.书与番</h1>  <p class="lead">
                         <?php
-$servername = "localhost";
-$username = "yimian";
-$password = "lymian0904";
-$dbname = "yimian";
- 
-// 创建连接
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("连接失败: " . $conn->connect_error);
-} 
+           $mydbhost = "114.116.65.152";  
+            $mydbuser = "yimian";  
+            $mydbpass = 'Lymian0904@112';  
+            $conn = mysqli_connect($mydbhost, $mydbuser, $mydbpass);  
+            if(! $conn){  
+                die("connect error: " . mysqli_error($conn));  
+            }  
+            mysqli_select_db( $conn, 'yimian');  
  
 $sql = "SELECT * FROM reading where val=1 order by end asc";
 $result = $conn->query($sql);
