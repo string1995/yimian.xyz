@@ -1,144 +1,291 @@
+<!--
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<meta name=author content="Yimian"/>
-		<meta name=description content="Designed Studio - Providing web consulting and web design services. Designing your Business for the Web"/>
-		<meta name=robots content="index,follow"/>
-		<meta name=title content="Questionnaire">
+   ___     ___
+  |\  \    |  |
+  \ \  \   |  |
+   \ \  \  |  |
+    \ \  \_|  |  ___    _____________    ___    _________      _________     
+     \ \     /  |\  \  |\   __   __  \  |\  \  |\   ___  \    |\   ___  \ 
+      \ \  \/   \ \  \ \ \  \-\  \-\  \ \ \  \ \ \  \--\  \   \ \  \--\  \ 
+       \ \  \    \ \  \ \ \  \ \  \ \  \ \ \  \ \ \  \  \  \   \ \  \  \  \
+        \ \  \    \ \  \ \ \  \ \  \ \  \ \ \  \ \ \  \__\  \___\ \  \  \  \ 
+         \ \__\    \ \__\ \ \__\ \__\ \__\ \ \__\ \ \___________\\ \__\  \__\
+          \|__|     \|__|  \|__| |__| |__|  \|__|  \|___________| \|__|  |__|
 
-    <script src=" js/1.js" async></script>
-
-    <title>Guide</title>
-
-    <!-- Awwwwards CSS -->
-    <link type="text/css" media="screen" rel="stylesheet" href="awwwards.css" />
-
-		<link rel="stylesheet" href=" css/first.css" media="all">
-		<!-- <script src="js/baidu/html5shiv.js"></script> -->
+-->
 
 
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Yimian Web</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://cdn.yimian.ac.cn/img/logo/logo.ico" type="image/x-icon"/>
+<style>
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+html {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #333;
+  font-family: "Nunito Sans", sans-serif;
+}
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #ecf0f9;
+  background-attachment: fixed;
+}
 
-    <!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
+.content {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+}
 
-    <!-- Animate.css -->
-    <link href=" css/animate.css" rel="stylesheet">
+.heading {
+  width: 100%;
+  margin-left: 1rem;
+  font-weight: 900;
+  font-size: 1.618rem;
+  text-transform: uppercase;
+  letter-spacing: .1ch;
+  line-height: 1;
+  padding-bottom: .5em;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.heading:after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #1a9be6, #1a57e6);
+  bottom: 0;
+}
 
-    <!-- Pace -->
-    <link href=" css/pace.css" rel="stylesheet">
+.description {
+  width: 100%;
+  margin-top: 0;
+  margin-left: 1rem;
+  margin-bottom: 3rem;
+}
 
-    <!-- ScrollFlow -->
-    <link href=" css/eskju.jquery.scrollflow.css" rel="stylesheet">
+.card {
+  color: inherit;
+  cursor: pointer;
+  width: calc(33% - 2rem);
+  min-width: calc(33% - 2rem);
+  height: 400px;
+  min-height: 400px;
+  perspective: 1000px;
+  margin: 1rem;
+  position: relative;
+}
+@media screen and (max-width: 800px) {
+  .card {
+    width: calc(50% - 2rem);
+  }
+}
+@media screen and (max-width: 500px) {
+  .card {
+    width: 100%;
+  }
+}
 
-    <!-- Custom CSS and js -->
-    <link href=" css/fullscreen-modals.css" rel="stylesheet">
-    <link href=" css/style.css" rel="stylesheet">
-    <link href=" css/custom.css" rel="stylesheet">
+.front,
+.back {
+  display: flex;
+  border-radius: 6px;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: ease-in-out 600ms;
+}
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+.front {
+  background-size: cover;
+  padding: 2rem;
+  font-size: 1.618rem;
+  font-weight: 600;
+  color: #fff;
+  overflow: hidden;
+  font-family: Poppins, sans-serif;
+}
+.front:before {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #1a9be6, #1a57e6);
+  opacity: .25;
+  z-index: -1;
+}
+.card:hover .front {
+  transform: rotateY(180deg);
+}
+.card:nth-child(even):hover .front {
+  transform: rotateY(-180deg);
+}
 
-    <script src=" js/baidu/jquery-1.8.1.min.js"></script>
-		<!--<script src="js/baidu/skrollr.min.js"></script> -->
-		 <script src=" js/baidu/jquery.iosslider.min.js"></script>
-		<script src=" js/baidu/ui.js"></script>
-		<script>
-			$(document).ready(function(){
+.back {
+  background: #fff;
+  transform: rotateY(-180deg);
+  padding: 0 2em;
+}
+.card:hover .back {
+  transform: rotateY(0deg);
+}
+.card:nth-child(even) .back {
+  transform: rotateY(180deg);
+}
+.card:nth-child(even):hover .back {
+  transform: rotateY(0deg);
+}
 
-				//boot();
-				initMainSlider();
-				//if (IEVersion()==false || IEVersion()>8) initMainAnimation();
-
-			});
-		</script>
-
-		<!--[if IE 8]>
-		<link rel="stylesheet" type="text/css" href="css/ie8.css" />
-		<![endif]-->
-
-        <!--[if lt IE 9]>
-        <script type="text/javascript" src="js/baidu/skrollr.ie.min.js"></script>
-        <![endif]-->
-
-		<!--[if lt IE 9]>
-			<script type="text/javascript" src="js/baidu/respond.min.js"></script>
-		<![endif]-->
-  </head>
-
-  <body data-spy="scroll" data-target=".navbar" data-offset="50">
-
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top blue-bg">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand logo" href="./"><img src=" img/logo_white.png"></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse pull-right">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="https://www.yimian.xyz">Yimian Page</a></li>
-
-          </ul>
-        </div><!--/.nav-collapse -->
+.button {
+  transform: translateZ(40px);
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  font-weight: bold;
+  color: #fff;
+  padding: .5em 1em;
+  border-radius: 100px;
+  font: inherit;
+  background: linear-gradient(135deg, #1a9be6, #1a57e6);
+  border: none;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 300ms ease;
+}
+.button:before {
+  transition: 300ms ease;
+  position: absolute;
+  display: block;
+  content: '';
+  transform: translateZ(-40px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
+  border-radius: 100px;
+  left: 10px;
+  top: 16px;
+  box-shadow: 0 0 10px 10px rgba(26, 87, 230, 0.25);
+  background-color: rgba(26, 87, 230, 0.25);
+}
+.button:hover {
+  transform: translateZ(55px);
+}
+.button:hover:before {
+  transform: translateZ(-55px);
+}
+.button:active {
+  transform: translateZ(20px);
+}
+.button:active:before {
+  transform: translateZ(-20px);
+  top: 12px;
+}
+</style>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>console.log('\n' + ' %c Yimian  %c https://www.yimian.xyz ' + '\n', 'color: #00FFFF; background: #030307; padding:5px 0;', 'background: #4682B4; padding:5px 0;');</script>
+	<script>console.log('Thankfully / Proudly include Plugins:'+'\n');console.log('\n' + ' %c jQuery v3.3.1 %c https://jquery.com '+ '\n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;');</script>
+</script>
+<script src="https://cdn.yimian.ac.cn/cookie/cookie.js"></script>
+<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+<script type="text/javascript">ip=returnCitySN.cip;ipCity=returnCitySN.cname;</script>
+<script src="https://cdn.yimian.ac.cn/fp/fp.js"></script>
+<script src="https://cdn.bootcss.com/device.js/0.2.7/device.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">if(device.mobile()){document.body.style.zoom="0.8";}</script>
+<div class="content">
+  <a class="card" href="#!">
+    <div class="front" style="background-image: url(img/559.jpg);">
+      <p>Yimian Page</p>
+    </div>
+    <div class="back">
+      <div>
+        <p>Yimian's Home Page</p>
+        <p>Simple, awesome but smart!</p>
+        <button class="button" onClick="window.location.href='https://cn.yimian.xyz'">Click Here</button>
       </div>
-    </nav>
+    </div></a><a class="card" href="#!">
+    <div class="front" style="background-image: url(img/560.jpg);">
+      <p>Yimian Video</p>
+    </div>
+    <div class="back">
+      <div>
+        <p>Yimian's personal Video Platform</p>
+        <p>Share video with the one you love!</p>
+        <button class="button" onClick="window.location.href='https://cn.yimian.xyz/video'">Click Here</button>
+      </div>
+    </div></a><a class="card" href="#!">
+    <div class="front" style="background-image: url(img/567.jpg);">
+      <p>Yimian Cloud</p>
+    </div>
+    <div class="back">
+      <div>
+        <p>Yimian's Storage Cloud</p>
+        <p>Aim to provide the best storage service for Families, Friends and Classmates!</p>
+        <button class="button" onclick="window.location.href='https://cloud.yimian.xyz'">Click Here</button>
+      </div>
+    </div></a><a class="card" href="#!">
+    <div class="front" style="background-image: url(img/562.jpg);">
+      <p>Yimian VPN</p>
+    </div>
+    <div class="back">
+      <div>
+        <p>Service for mainland China</p>
+        <p>The key to Pandora's box..。</p>
+        <button class="button" onClick="window.location.href='https://cn.yimian.xyz/ssr'">Click Here</button>
+      </div>
+    </div></a><a class="card" href="#!">
+    <div class="front" style="background-image: url(img/563.jpg);">
+      <p>Steel15.com</p>
+    </div>
+    <div class="back">
+      <div>
+        <p>Steel, Mr Black and 15!</p>
+        <p>A tentative platform for practicing unbelievable ideas among old mates from Class 12. </p>
+        <button class="button" onClick="https://steel15.com">Click Here</button>
+      </div>
+    </div></a><a class="card" href="#!">
+    <div class="front" style="background-image: url(img/564.jpg);">
+      <p>Wanzong Business</p>
+    </div>
+    <div class="back">
+      <div>
+        <p>Official Website of Wanzong Business</p>
+        <p>Wanzong provides the best one-stop service in Wine Business!</p>
+        <button class="button" onClick="window.location.href='https://wanzong.group'">Click Here</button>
+      </div>
+    </div></a>
+</div>
 
-    <section id="section1" class="region region-1 align-center blue-bg">
-    	<!--
-        	作者：1069339155@qq.com
-        	时间：2016-03-04
-        	描述：
-        	<section id="section1" class="region region-1 align-center blue-bg">
-        -->
-    	<div class="container">
-		    <h1 class="wow zoomIn">Please Select the Content You Want to Visit:</h1>
-		    <div class="desc wow zoomIn">
-          <h4><a href="https://www.yimian.xyz">Yimian Page</a><h4>
-		   <h4><a href="https://video.yimian.xyz">Yimian Video</a><h4>
-             <h4><a href="https://cloud.yimian.xyz">Yimian Cloud</a></h4>
-             <h4><a href="http://yulu.yimian.xyz">Yimian Yulu</a></h4>
-          <h4><a href="https://blog.yimian.xyz">Yimian Blog</a><h4>
-		   <h4><a href="http://dev.yimian.xyz">Yimian Dev</a><h4>
-			<h4><a href="https://vpn.yimian.xyz">Yimian VPN</a><h4>
-			<h4><a href="https://call.yimian.xyz">Yimian Call</a><h4>
-		   <h4><a href="http://reading.yimian.xyz">Yimian Reading</a><h4>
-			 <h4><a href="https://monitor.yimian.xyz">Yimian Monitor</a><h4>
-
-
-
-    </section>
-
-
-
-
-
-
-
-
-    <footer class="region blue-bg align-center">
-
-    </footer>
-
-
-
-
-  </body>
+</body>
+<script>$.post("https://cn.yimian.xyz/heartbeat.php",{"ip":ip,"fp":fp,"city":ipCity})</script>
 </html>
